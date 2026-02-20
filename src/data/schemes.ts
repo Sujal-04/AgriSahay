@@ -20,11 +20,12 @@ export const schemes: Scheme[] = [
     },
     ministry: "Ministry of Agriculture",
     eligibility: {
-      maxLandSize: 5,
+      landSize: { max: 5 },
       requiresBankAccount: true,
     },
     documents: ["Aadhaar Card", "Bank Passbook", "Land Records"],
     applicationUrl: "https://pmkisan.gov.in",
+    active: true,
   },
   {
     id: "pmfby",
@@ -50,6 +51,7 @@ export const schemes: Scheme[] = [
     },
     documents: ["Aadhaar Card", "Bank Passbook", "Land Records", "Sowing Certificate"],
     applicationUrl: "https://pmfby.gov.in",
+    active: true,
   },
   {
     id: "soil-health",
@@ -72,6 +74,7 @@ export const schemes: Scheme[] = [
     eligibility: {},
     documents: ["Aadhaar Card", "Land Records"],
     applicationUrl: "https://soilhealth.dac.gov.in",
+    active: true,
   },
   {
     id: "kcc",
@@ -93,10 +96,11 @@ export const schemes: Scheme[] = [
     ministry: "Ministry of Finance",
     eligibility: {
       requiresBankAccount: true,
-      minLandSize: 0.5,
+      landSize: { min: 0.5 },
     },
     documents: ["Aadhaar Card", "Bank Passbook", "Land Records", "Passport Photo"],
     applicationUrl: "https://www.nabard.org",
+    active: true,
   },
   {
     id: "pmksy",
@@ -122,6 +126,7 @@ export const schemes: Scheme[] = [
     },
     documents: ["Aadhaar Card", "Land Records", "Bank Passbook", "Quotation for Equipment"],
     applicationUrl: "https://pmksy.gov.in",
+    active: true,
   },
   {
     id: "nmsa",
@@ -142,11 +147,12 @@ export const schemes: Scheme[] = [
     },
     ministry: "Ministry of Agriculture",
     eligibility: {
-      maxIncome: 500000,
+      income: { max: 500000 },
       categories: ["sc", "st", "obc", "minority"],
     },
     documents: ["Aadhaar Card", "Income Certificate", "Land Records", "Caste Certificate"],
     applicationUrl: "https://nmsa.dac.gov.in",
+    active: true,
   },
   {
     id: "enam",
@@ -171,6 +177,7 @@ export const schemes: Scheme[] = [
     },
     documents: ["Aadhaar Card", "Bank Passbook", "Mandi Registration"],
     applicationUrl: "https://enam.gov.in",
+    active: true,
   },
   {
     id: "organic-farming",
@@ -191,10 +198,10 @@ export const schemes: Scheme[] = [
     },
     ministry: "Ministry of Agriculture",
     eligibility: {
-      minLandSize: 1,
-      maxLandSize: 10,
+      landSize: { min: 1, max: 10 },
     },
     documents: ["Aadhaar Card", "Land Records", "Bank Passbook", "Cluster Registration"],
     applicationUrl: "https://pgsindia-ncof.gov.in",
+    active: true,
   },
 ];

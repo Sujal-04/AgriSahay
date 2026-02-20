@@ -15,6 +15,7 @@ export function Header() {
     { to: "/", label: t.nav.home },
     { to: "/profile", label: t.nav.profile },
     { to: "/recommendations", label: t.nav.recommendations },
+    { to: "/schemes", label: t.viewSchemes },
     { to: "/documents", label: t.nav.documents },
     { to: "/admin", label: t.nav.admin },
   ];

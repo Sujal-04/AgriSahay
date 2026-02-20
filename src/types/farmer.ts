@@ -11,14 +11,13 @@ export interface FarmerProfile {
   bankLinked: boolean;
 }
 
-export interface SchemeEligibility {
-  maxIncome?: number;
-  minLandSize?: number;
-  maxLandSize?: number;
-  landTypes?: string[];
+export interface EligibilityCriteria {
+  landSize?: { min?: number; max?: number };
+  income?: { max: number };
   categories?: string[];
   states?: string[];
   crops?: string[];
+  landTypes?: string[];
   requiresIrrigation?: boolean;
   requiresBankAccount?: boolean;
 }
@@ -29,17 +28,29 @@ export interface Scheme {
   description: Record<string, string>;
   benefits: Record<string, string>;
   ministry: string;
-  eligibility: SchemeEligibility;
+  eligibility: EligibilityCriteria;
   documents: string[];
   applicationUrl: string;
+  active: boolean;
+}
+
+export interface ScoringBreakdown {
+  criterion: string;
+  weight: number;
+  score: number; // 0-1
+  weightedScore: number;
+  reason: string;
+  met: boolean;
 }
 
 export interface SchemeRecommendation {
   scheme: Scheme;
-  score: number;
-  confidence: number;
+  totalScore: number; // 0-100
+  confidenceScore: number; // 0-100
+  scoring: ScoringBreakdown[];
   reasons: string[];
   missingCriteria: string[];
+  eligible: boolean;
 }
 
 export type Language = "en" | "hi" | "mr";

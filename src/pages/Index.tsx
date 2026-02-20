@@ -18,11 +18,7 @@ const Index = () => {
     <main>
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-        <img
-          src={heroImage}
-          alt="Indian farmlands"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Indian farmlands" className="absolute inset-0 w-full h-full object-cover" />
         <div className="hero-gradient absolute inset-0" />
         <div className="container relative z-10 px-4 py-20">
           <div className="max-w-2xl">
@@ -45,11 +41,8 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/recommendations">
-                <Button
-                  variant="outline"
-                  className="btn-rural border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg"
-                >
+              <Link to="/schemes">
+                <Button className="btn-rural bg-primary-foreground/20 text-primary-foreground border-2 border-primary-foreground/50 hover:bg-primary-foreground/30 text-lg backdrop-blur-sm">
                   {t.viewSchemes}
                 </Button>
               </Link>
@@ -81,7 +74,7 @@ const Index = () => {
             {features.map((f, i) => (
               <div
                 key={f.title}
-                className="card-scheme border-border bg-card p-8 text-center animate-fade-up"
+                className="card-scheme border-border bg-card p-8 text-center shadow-sm animate-fade-up"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
@@ -98,9 +91,7 @@ const Index = () => {
       {/* CTA */}
       <section className="py-16 bg-primary/5">
         <div className="container px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-4">
-            {t.tagline}
-          </h2>
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-4">{t.tagline}</h2>
           <Link to="/profile">
             <Button className="btn-rural bg-primary text-primary-foreground hover:bg-primary/90 text-lg">
               {t.getStarted}

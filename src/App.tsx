@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 import Index from "./pages/Index";
 import Profile from "./pages/Profile";
 import Recommendations from "./pages/Recommendations";
+import AllSchemes from "./pages/AllSchemes";
 import DocumentUpload from "./pages/DocumentUpload";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/recommendations" element={<Recommendations />} />
+            <Route path="/schemes" element={<AllSchemes />} />
             <Route path="/documents" element={<DocumentUpload />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
