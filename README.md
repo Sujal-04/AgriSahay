@@ -1,5 +1,7 @@
 # 🌾 KrishiIntel
 
+Link - https://krishiintel.netlify.app/
+
 ## AI-Powered Government Scheme Discovery Platform
 
 KrishiIntel is a Human + Machine decision-support system that helps farmers discover government schemes they are eligible for. It analyzes farmer profiles using structured eligibility rules and provides explainable recommendations with confidence scores.
