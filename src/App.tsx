@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Header } from "@/components/Header";
-import { ChatWidget } from "@/components/ChatWidget";
 import Index from "./pages/Index";
 import Profile from "./pages/Profile";
 import Recommendations from "./pages/Recommendations";
@@ -35,7 +34,6 @@ const App = () => (
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <ChatWidget />
         </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>
