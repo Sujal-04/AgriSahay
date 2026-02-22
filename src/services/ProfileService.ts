@@ -1,7 +1,7 @@
 import { FarmerProfile } from "@/types/farmer";
 
-const STORAGE_KEY = "krishi-profile";
-const SYNC_KEY = "krishi-sync-ts";
+const STORAGE_KEY = "agrisahay-profile";
+const SYNC_KEY = "agrisahay-sync-ts";
 
 export class ProfileService {
   static get(): FarmerProfile | null {
@@ -13,6 +13,10 @@ export class ProfileService {
     } catch {
       return null;
     }
+  }
+
+  static getProfile(): FarmerProfile | null {
+    return this.get();
   }
 
   static save(profile: FarmerProfile): void {

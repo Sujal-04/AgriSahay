@@ -8,14 +8,41 @@ import { useState } from "react";
 
 interface SchemeCardProps {
   recommendation: SchemeRecommendation;
-  rank: number;
+  rank?: number;
+  compact?: boolean;
 }
 
-export function SchemeCard({ recommendation, rank }: SchemeCardProps) {
+export function SchemeCard({ recommendation, rank = 0, compact = false }: SchemeCardProps) {
   const { language, t } = useLanguage();
   const { scheme, totalScore, confidenceScore, scoring, reasons, missingCriteria, eligible } = recommendation;
   const isTop = rank === 0;
-  const [expanded, setExpanded] = useState(isTop);
+  const [expanded, setExpanded] = useState(isTop && !compact);
+
+  if (compact) {
+    return (
+      <div className="card-scheme border-border bg-card p-3">
+        <div className="flex items-start justify-between mb-2">
+          <div className="flex-1">
+            <h4 className="text-sm font-bold font-heading text-foreground">
+              {scheme.name[language]}
+            </h4>
+            <p className="text-xs text-muted-foreground mt-1">{scheme.description[language]}</p>
+          </div>
+          <div className="text-right ml-2">
+            <div className="text-lg font-bold text-primary">{totalScore}%</div>
+          </div>
+        </div>
+        <Button
+          size="sm"
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-xs"
+          onClick={() => window.open(scheme.applicationUrl, "_blank")}
+        >
+          {t.recommendations.apply}
+          <ExternalLink className="ml-1 h-3 w-3" />
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div

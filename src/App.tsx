@@ -12,6 +12,7 @@ import Recommendations from "./pages/Recommendations";
 import AllSchemes from "./pages/AllSchemes";
 import DocumentUpload from "./pages/DocumentUpload";
 import Admin from "./pages/Admin";
+import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/recommendations" element={<Recommendations />} />
             <Route path="/schemes" element={<AllSchemes />} />
             <Route path="/documents" element={<DocumentUpload />} />
+            <Route path="/chat" element={<Chat />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

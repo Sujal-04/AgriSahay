@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
-import { Sprout, Brain, Languages, WifiOff, Accessibility, ArrowRight } from "lucide-react";
+import { Sprout, Brain, Languages, WifiOff, Accessibility, ArrowRight, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-farm.jpg";
 
 const Index = () => {
@@ -100,6 +100,17 @@ const Index = () => {
           </Link>
         </div>
       </section>
+
+      {/* Floating Chat Button */}
+      <Link to="/chat">
+        <Button
+          size="lg"
+          className="fixed bottom-6 right-6 rounded-full shadow-lg bg-secondary text-secondary-foreground hover:bg-secondary/90 h-14 w-14 p-0 z-50"
+          title={t.nav.chat}
+        >
+          <MessageCircle className="h-6 w-6" />
+        </Button>
+      </Link>
     </main>
   );
 };

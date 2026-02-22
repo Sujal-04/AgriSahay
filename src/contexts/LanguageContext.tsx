@@ -16,20 +16,21 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(
-    () => (localStorage.getItem("krishi-lang") as Language) || "en"
+    () => (localStorage.getItem("agrisahay-lang") as Language) || "en"
   );
-  const [highContrast, setHighContrast] = useState(
-    () => localStorage.getItem("krishi-hc") === "true"
-  );
+  const [highContrast, setHighContrast] = useState(() => {
+    const stored = localStorage.getItem("agrisahay-hc");
+    return stored === null ? true : stored === "true"; // Default to true (high contrast enabled)
+  });
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem("krishi-lang", lang);
+    localStorage.setItem("agrisahay-lang", lang);
   };
 
   const handleSetHighContrast = (v: boolean) => {
     setHighContrast(v);
-    localStorage.setItem("krishi-hc", String(v));
+    localStorage.setItem("agrisahay-hc", String(v));
   };
 
   return (
