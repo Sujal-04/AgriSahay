@@ -5,13 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { Header } from "@/components/Header";
+import { ChatWidget } from "@/components/ChatWidget";
 import Index from "./pages/Index";
 import Profile from "./pages/Profile";
 import Recommendations from "./pages/Recommendations";
 import AllSchemes from "./pages/AllSchemes";
 import DocumentUpload from "./pages/DocumentUpload";
 import Admin from "./pages/Admin";
-import Chat from "./pages/Chat";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,10 +30,10 @@ const App = () => (
             <Route path="/recommendations" element={<Recommendations />} />
             <Route path="/schemes" element={<AllSchemes />} />
             <Route path="/documents" element={<DocumentUpload />} />
-            <Route path="/chat" element={<Chat />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <ChatWidget />
         </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>
